@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "WMCameraVC.h"
 
 @interface ViewController ()
 
@@ -19,9 +20,18 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [[UIApplication sharedApplication] setStatusBarHidden:NO];
+}
+
+- (IBAction)cameraClick:(id)sender {
+    WMCameraVC *cameraVC = [[WMCameraVC alloc] initWithNibName:@"WMCameraVC" bundle:nil];
+    cameraVC.modalPresentationStyle = UIModalPresentationPageSheet;
+    cameraVC.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    
+    [self presentViewController:cameraVC animated:YES completion:nil];
 }
 
 @end
