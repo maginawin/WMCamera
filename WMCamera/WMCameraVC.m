@@ -47,6 +47,7 @@
 }
 
 - (IBAction)toggleCameraClick:(id)sender {
+  
     [_recordManager toggleCamera];
     
     [self autoFocus];
@@ -78,25 +79,25 @@
     
     NSString *stateText = [NSString string];
     AVCaptureFlashMode flashMode;
-//    AVCaptureTorchMode torchMode;
+    //    AVCaptureTorchMode torchMode;
     
     switch (state) {
         case CameraFlashStateAuto: {
             stateText = @"AUTO";
             flashMode = AVCaptureFlashModeAuto;
-//            torchMode = AVCaptureTorchModeAuto;
+            //            torchMode = AVCaptureTorchModeAuto;
             break;
         }
         case CameraFlashStateON: {
             stateText = @"ON";
             flashMode = AVCaptureFlashModeOn;
-//            torchMode = AVCaptureTorchModeOn;
+            //            torchMode = AVCaptureTorchModeOn;
             break;
         }
         case CameraFlashStateOFF: {
             stateText = @"OFF";
             flashMode = AVCaptureFlashModeOff;
-//            torchMode = AVCaptureTorchModeOff;
+            //            torchMode = AVCaptureTorchModeOff;
             break;
         }
     }
@@ -161,7 +162,7 @@
 #pragma mark - Selector
 
 - (void)applicationDidEnterBackgroundNotification {
-
+    
 }
 
 - (void)applicationWillEnterForegroundNotification {
